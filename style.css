@@ -149,6 +149,20 @@ h1, h2, h3, h4 {
     color: white;
 }
 
+.whatsapp-btn-main {
+    background-color: #25d366;
+    color: white;
+    border-color: #25d366;
+}
+
+.whatsapp-btn-main:hover {
+    background-color: #128c7e;
+    border-color: #128c7e;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 /* Header */
 .header {
     padding: 1.5rem 0;
@@ -301,9 +315,20 @@ h1, h2, h3, h4 {
     padding: 6rem 0;
 }
 
-.about-content {
-    max-width: 600px;
-    margin: 0 auto;
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.about-profile {
     text-align: center;
 }
 
@@ -349,6 +374,28 @@ h1, h2, h3, h4 {
     font-size: 1.125rem;
     color: var(--text-main);
     font-weight: 600;
+}
+
+.about-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.about-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+}
+
+.about-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1;
 }
 
 /* Testimonials Section */
