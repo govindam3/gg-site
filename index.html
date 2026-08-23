@@ -17,7 +17,7 @@
     <header class="header">
         <div class="container nav-container">
             <a href="#" class="logo-link" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-                <img src="logo.png" alt="Chaitanya English Classes Logo" class="logo-img" style="height: 50px; width: auto;">
+                <img src="logo.svg" alt="Chaitanya English Classes Logo" class="logo-img" style="height: 70px; width: auto;">
                 <h1 class="logo" style="margin: 0; font-size: 1.5rem;">Chaitanya English Classes</h1>
             </a>
             <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
@@ -78,7 +78,7 @@
                 <div class="about-grid">
                     <div class="about-profile">
                         <div class="teacher-photo-container">
-                            <img src="eng.png" alt="Rajeev Gupta - English Teacher" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="eng.png" alt="Rajeev Gupta - English Teacher" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;">
                         </div>
                         
                         <h3 class="teacher-name" style="margin-bottom: 0.5rem; margin-top: 1.5rem;">Rajeev Gupta</h3>
@@ -89,9 +89,9 @@
                     </div>
 
                     <div class="about-details feature-card">
-                        <div class="about-badge" style="margin-bottom: 1.5rem;">30+ Years Experience</div>
                         <p style="margin-bottom: 1.5rem;">A qualified and experienced English teacher dedicated to helping students speak and write English with confidence. With years of experience teaching one-on-one and small groups, I understand that every student learns differently — so each class is tailored to your needs, pace and goals.</p>
                         <ul class="about-list">
+                            <li><strong>30+ Years Experience</strong></li>
                             <li>Qualified English teacher with proven teaching experience</li>
                             <li>Specializes in grammar, spoken English, writing and exam preparation</li>
                             <li>Patient, friendly and focused on your steady progress</li>
@@ -191,7 +191,12 @@
                 <h2 class="section-title">Book a Demo</h2>
                 <p class="section-subtitle">Fill in your details and I'll get back to you to schedule your demo class.</p>
                 
-                <form class="demo-form" action="#" method="POST">
+                <form class="demo-form" action="https://formsubmit.co/rajeev.gupta112@gmail.com" method="POST">
+                    <!-- Disable Captcha (Optional, keeps it clean) -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Success Page Redirect (Optional, we'll just use their default) -->
+                    <input type="hidden" name="_subject" value="New Demo Booking Request!">
+                    
                     <div class="form-group">
                         <label for="studentName">Student's Name</label>
                         <input type="text" id="studentName" name="studentName" placeholder="Your name" required>
