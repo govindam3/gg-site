@@ -96,4 +96,56 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- Form Submission Logic ---
+    const demoForm = document.getElementById('demoForm');
+    const formStatus = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (demoForm) {
+        demoForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formStatus.style.display = 'none';
+
+            // Collect form data
+            const formData = new FormData(demoForm);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    formStatus.textContent = 'Demo request sent successfully! We will contact you soon.';
+                    formStatus.style.color = '#155724';
+                    formStatus.style.backgroundColor = '#d4edda';
+                    formStatus.style.display = 'block';
+                    demoForm.reset();
+                } else {
+                    throw new Error(result.message || 'Failed to send');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                formStatus.textContent = 'There was an error sending your request. Please try again later.';
+                formStatus.style.color = '#721c24';
+                formStatus.style.backgroundColor = '#f8d7da';
+                formStatus.style.display = 'block';
+            } finally {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Book a Demo';
+            }
+        });
+    }
 });
