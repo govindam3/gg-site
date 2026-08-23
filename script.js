@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     formStatus.style.display = 'block';
                     demoForm.reset();
                 } else {
-                    throw new Error(result.message || 'Failed to send');
+                    throw new Error(result.error || result.message || 'Failed to send');
                 }
             } catch (error) {
                 console.error('Error submitting form:', error);
