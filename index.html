@@ -78,7 +78,7 @@
                 <div class="about-grid">
                     <div class="about-profile">
                         <div class="teacher-photo-container">
-                            <img src="eng.png" alt="Rajeev Gupta - English Teacher" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;">
+                            <img src="eng.png" alt="Rajeev Gupta - English Teacher" class="teacher-photo-img">
                         </div>
                         
                         <h3 class="teacher-name" style="margin-bottom: 0.5rem; margin-top: 1.5rem;">Rajeev Gupta</h3>
@@ -191,11 +191,7 @@
                 <h2 class="section-title">Book a Demo</h2>
                 <p class="section-subtitle">Fill in your details and I'll get back to you to schedule your demo class.</p>
                 
-                <form class="demo-form" action="https://formsubmit.co/rajeev.gupta112@gmail.com" method="POST">
-                    <!-- Disable Captcha (Optional, keeps it clean) -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <!-- Success Page Redirect (Optional, we'll just use their default) -->
-                    <input type="hidden" name="_subject" value="New Demo Booking Request!">
+                <form class="demo-form" action="mailto:rajeev.gupta112@gmail.com" method="POST" enctype="text/plain">
                     
                     <div class="form-group">
                         <label for="studentName">Student's Name</label>
