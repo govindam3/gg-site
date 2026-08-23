@@ -353,22 +353,17 @@ h1, h2, h3, h4 {
     width: 250px;
     height: 250px;
     margin: 4rem auto 2rem; /* Extra top margin for pop-out */
-    border-radius: 50%;
-    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-    box-shadow: var(--shadow-lg);
-    display: flex;
-    align-items: flex-end; /* Align image to bottom */
-    justify-content: center;
     position: relative;
-    /* No overflow:hidden to allow pop-out */
 }
 
 .teacher-photo-container::before {
     content: '';
     position: absolute;
-    inset: -4px;
+    inset: 0;
     border-radius: 50%;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
     border: 4px solid white;
+    box-shadow: var(--shadow-lg);
     z-index: 1;
 }
 
@@ -376,12 +371,24 @@ h1, h2, h3, h4 {
     border-color: #333;
 }
 
-.teacher-photo-img {
-    width: 90%;
-    height: auto;
-    position: relative;
+.teacher-photo-clipper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 0 0 125px 125px; /* Perfectly matches bottom half of 250px circle */
     z-index: 2;
-    transform: translateY(-15%); /* Pull image upwards to pop out */
+}
+
+.teacher-photo-img {
+    width: 110%; /* Make image slightly wider to ensure arms reach the edge */
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .photo-placeholder {
