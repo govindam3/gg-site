@@ -350,9 +350,9 @@ h1, h2, h3, h4 {
 }
 
 .teacher-photo-container {
-    width: 250px;
-    height: 250px;
-    margin: 4rem auto 2rem; /* Extra top margin for pop-out */
+    width: 320px;
+    height: 320px;
+    margin: 5rem auto 2.5rem; /* Extra top margin for pop-out */
     position: relative;
 }
 
@@ -375,10 +375,10 @@ h1, h2, h3, h4 {
     position: absolute;
     bottom: 4px; /* Inside the border */
     left: 4px;
-    width: 242px; /* 250px - 8px border */
-    height: 350px;
+    width: 312px; /* 320px - 8px border */
+    height: 450px;
     overflow: hidden;
-    border-radius: 0 0 121px 121px; /* Matches inner circle radius */
+    border-radius: 0 0 156px 156px; /* Matches inner circle radius */
     z-index: 2;
 }
 
@@ -387,7 +387,7 @@ h1, h2, h3, h4 {
     height: auto;
     position: absolute;
     bottom: 0;
-    left: 50%;
+    left: 47%; /* Shift left to center the PERSON visually */
     transform: translateX(-50%);
 }
 
