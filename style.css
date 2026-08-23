@@ -506,6 +506,34 @@ footer {
     font-size: 0.875rem;
 }
 
+/* WhatsApp Float */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: #128c7e;
+}
+
+.whatsapp-float svg {
+    width: 35px;
+    height: 35px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero {
