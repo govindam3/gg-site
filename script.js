@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (error) {
                 console.error('Error submitting form:', error);
-                formStatus.textContent = 'There was an error sending your request. Please try again later.';
+                formStatus.textContent = 'Error: ' + error.message;
                 formStatus.style.color = '#721c24';
                 formStatus.style.backgroundColor = '#f8d7da';
                 formStatus.style.display = 'block';
