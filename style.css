@@ -57,11 +57,6 @@
                 radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.05) 0%, rgba(18, 18, 18, 0) 50%);
 }
 
-[data-theme="dark"] .teacher-photo-container {
-    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    border-color: #333;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -369,6 +364,7 @@ h1, h2, h3, h4 {
 
 [data-theme="dark"] .teacher-photo-container::before {
     border-color: #333;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
 }
 
 .teacher-photo-clipper {
@@ -573,7 +569,7 @@ h1, h2, h3, h4 {
 
 /* Footer */
 footer {
-    background-color: var(--primary-color);
+    background-color: #0A192F; /* Keep dark even in dark mode */
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     padding: 2rem 0;
