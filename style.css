@@ -383,10 +383,10 @@ h1, h2, h3, h4 {
 }
 
 .teacher-photo-img {
-    width: 115%; /* Scale up slightly so arms touch the edges more naturally */
+    width: 85%; /* Zoom out so shoulders and arms fit inside the circle */
     height: auto;
     position: absolute;
-    bottom: -15px; /* Push down slightly to fill the bottom better */
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
 }
