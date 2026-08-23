@@ -12,8 +12,7 @@ module.exports = async function handler(req, res) {
     }
 
     try {
-        // Create a transporter using SMTP credentials from Environment Variables
-        const transporter = nodemailer.createTransport({
+        let transporterConfig = {
             host: process.env.SMTP_HOST,
             port: process.env.SMTP_PORT || 465,
             secure: process.env.SMTP_SECURE === 'true' || process.env.SMTP_PORT == 465, 
@@ -21,7 +20,20 @@ module.exports = async function handler(req, res) {
                 user: process.env.SMTP_USER,
                 pass: process.env.SMTP_PASS,
             },
-        });
+        };
+
+        // Use NodeMailer's built-in Gmail service to automatically handle all SSL/TLS quirks
+        if (process.env.SMTP_HOST && process.env.SMTP_HOST.includes('gmail')) {
+            transporterConfig = {
+                service: 'gmail',
+                auth: {
+                    user: process.env.SMTP_USER,
+                    pass: process.env.SMTP_PASS,
+                }
+            };
+        }
+
+        const transporter = nodemailer.createTransport(transporterConfig);
 
         // Email Options
         const mailOptions = {
