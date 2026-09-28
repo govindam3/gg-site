@@ -38,7 +38,7 @@ module.exports = async function handler(req, res) {
         // Email Options
         const mailOptions = {
             from: `"Website Form" <${process.env.SMTP_USER}>`,
-            to: 'rajeev.gupta112@gmail.com', // Recipient email
+            to: 'chaitanyaenglishclasses08@gmail.com', // Recipient email
             replyTo: email,
             subject: `New Demo Booking Request from ${studentName}`,
             text: `
