@@ -1,3 +1,7 @@
+// Initialize Vercel Analytics
+import { inject } from '@vercel/analytics';
+inject();
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- Testimonial Carousel Auto-Scroll Logic ---
     const track = document.getElementById('testimonialTrack');
